@@ -19,7 +19,7 @@ import { useRoute, useRouter } from "vue-router";
 import { getUser, updateUser } from "@/firebase";
 
 export default {
-  script() {
+  setup() {
     const router = useRouter();
     const route = useRoute();
     const userId = computed(() => route.params.id);
