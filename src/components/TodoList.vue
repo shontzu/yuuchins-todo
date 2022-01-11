@@ -1,16 +1,18 @@
-  <template v-for="todo in Todos"  :key="todo.id" >
-  <section v-if="todo.done === false">
-    <div style="width: 90%">
-      <h1>{{ todo.todo }}</h1>
-      <p>{{ todo.description }}</p>
-      <i>Created on: {{ new Date(todo.created).toString() }}</i>
-      <div>
-        <button @click="toggleTodo(todo)">Mark it as Done</button>
-        <button @click="deleteTodo(todo.id)">Delete</button>
+  <template>
+  <div v-for="todo in Todos" :key="todo.id">
+    <section v-if="todo.done === false">
+      <div style="width: 90%">
+        <h1>{{ todo.todo }}</h1>
+        <p>{{ todo.description }}</p>
+        <i>Created on: {{ new Date(todo.created).toString() }}</i>
+        <div>
+          <button @click="toggleTodo(todo)">Mark it as Done</button>
+          <button @click="deleteTodo(todo.id)">Delete</button>
+        </div>
       </div>
-    </div>
-    <h1 style="width: 10%">{{ todo.priority }}</h1>
-  </section>
+      <h1 style="width: 10%">{{ todo.priority }}</h1>
+    </section>
+  </div>
 </template>
 
 <script>
