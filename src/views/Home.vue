@@ -1,22 +1,22 @@
 <template>
   <div>
-    <h1>create new user</h1>
-    <user-create />
+    <h1>WIP</h1>
+    <todo-create />
     <hr />
-    <h1>list all users</h1>
-    <user-list />
+    <h1></h1>
+    <todo-list />
   </div>
 </template>
 
 <script>
-import UserCreate from "@/components/UserCreate.vue";
-import UserList from "@/components/UserList.vue";
+import TodoCreate from "@/components/TodoCreate.vue";
+import TodoList from "@/components/TodoList.vue";
 
 export default {
   name: "Home",
   components: {
-    UserCreate,
-    UserList,
+    TodoCreate,
+    TodoList,
   },
 };
 </script>

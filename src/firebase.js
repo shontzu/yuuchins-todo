@@ -16,30 +16,30 @@ const firebaseApp = firebase.initializeApp(config);
 
 // Connect to DB
 const db = firebaseApp.firestore()
-const usersCollection = db.collection('users')
+const TodosCollection = db.collection('todos')
 
-export const createUser = user => {
-    return usersCollection.add(user)
+export const createTodo = todo => {
+    return TodosCollection.add(todo)
 }
 
-export const getUser = async id => {
-    const user = await usersCollection.doc(id).get()
-    return user.exist ? user.data() : null
+export const getTodo = async id => {
+    const todo = await TodosCollection.doc(id).get()
+    return todo.exist ? todo.data() : null
 }
 
-export const updateUser = (id, user) => {
-    return usersCollection.doc(id).update(user)
+export const updateTodo = (id, todo) => {
+    return TodosCollection.doc(id).update(todo)
 }
 
-export const deleteUser = id => {
-    return usersCollection.doc(id).delete()
+export const deleteTodo = id => {
+    return TodosCollection.doc(id).delete()
 }
 
-export const useLoadUsers = () => {
-    const users = ref([])
-        const close = usersCollection.onSnapshot(snapshot=> {
-            users.value=snapshot.docs.map(doc=>({id:doc.id, ...doc.data()}))
+export const useLoadTodos = () => {
+    const Todos = ref([])
+        const close = TodosCollection.onSnapshot(snapshot=> {
+            Todos.value=snapshot.docs.map(doc=>({id:doc.id, ...doc.data()}))
         })
      onUnmounted(close)
-     return users   
+     return Todos   
 }
