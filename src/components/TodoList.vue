@@ -1,27 +1,19 @@
 <template>
-  <div>
-    <table>
-      <thead>
-        <tr>
-          <th>todo</th>
-          <th>Priority</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="{ id, todo, priority } in Todos" :key="id">
-          <td>{{ todo }}</td>
-          <td>{{ priority }}</td>
-          <td>
-            <router-link :to="`/edit/${id}`">
-              <button>Edit</button>
-            </router-link>
-            <button @click="deleteTodo(id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <section
+    v-for="{ id, todo, priority, description, created, done } in Todos"
+    :key="id"
+  >
+    <div style="width: 90%">
+      <h1>{{ todo }}</h1>
+      <p>{{ description }}</p>
+      <i>Created on: {{ created }}</i>
+      <div>
+        <button @click="toggleTodo(id)">Done ({{ done }})</button>
+        <button @click="deleteTodo(id)">Delete</button>
+      </div>
+    </div>
+    <h1 style="width: 10%">{{ priority }}</h1>
+  </section>
 </template>
 
 <script>
@@ -31,5 +23,22 @@ export default {
     const Todos = useLoadTodos();
     return { Todos, deleteTodo };
   },
+  methods: {
+    toggleTodo() {
+      this.todo.done == !this.todo.done;
+    },
+  },
 };
 </script>
+
+<style scoped>
+section {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+</style>
