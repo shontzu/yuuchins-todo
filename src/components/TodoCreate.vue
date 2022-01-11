@@ -1,9 +1,9 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <label>Todo</label>
+    <b>Todo</b>
     <input v-model="form.todo" type="text" required />
-
-    <label>Priority</label>
+<br>
+    <b>Priority</b>
     <div>
       <input v-model="form.priority" type="radio"  id="1"  name="priority"  value="1"  required  />
       <label for="1">Primary (1)</label><br />
@@ -14,12 +14,12 @@
     </div>
     <div>
       <input  v-model="form.priority"  type="radio"  id="3"  name="priority"  value="3"  required />
-      <label for="3"></label>Tertiary (3)<br /><br />
+      <label for="3">Tertiary (3)</label>
     </div>
-
-    <label>Description</label>
+<br>
+    <b>Description</b>
     <input v-model="form.description" type="text" />
-
+<br>
     <button type="submit">Create todo</button>
   </form>
 </template>
@@ -53,5 +53,8 @@ form {
   display: flex;
   flex-direction: column;
   background-color: rgba(255,255,0,0.5);
+  padding:10px;
+  margin:5px;
+  border-radius:10px;
 }
 </style>

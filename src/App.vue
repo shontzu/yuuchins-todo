@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <!-- <h1>~~~Yuuchin's Kanban-style todo~~~</h1> -->
+    <!-- <b>~~~Yuuchin's Kanban-style todo~~~</b> -->
     <router-view />
+    <footer>Work in Progress by Yuu Chin</footer>
   </div>
 </template>
 
@@ -16,7 +17,6 @@ html {
   background-image: url("../src/assets/bg-home-garden.png");
   background-position: center; 
   background-repeat: no-repeat; 
-  background-size: cover;
 }
 #app {
   font-family: cursive;
@@ -46,5 +46,11 @@ h1,
 p {
   margin: 0;
   padding: 0;
+}
+footer{
+  position: fixed;
+  width:100%;
+  bottom:0;
+  text-align: center;
 }
 </style>
