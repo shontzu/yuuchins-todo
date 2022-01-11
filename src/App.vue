@@ -12,8 +12,11 @@ export default {
 </script>
 
 <style>
-html{
-  background-color: brown;
+html {
+  background-image: url("../src/assets/bg-home-garden.png");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
 }
 #app {
   font-family: cursive;
@@ -21,24 +24,27 @@ html{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-input, button{
-  background-color: rgba(255, 255, 255,0.5);
+input,
+button {
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
-  margin:2px;
-  padding:10px;
+  margin: 2px;
+  padding: 10px;
   border-radius: 10px;
 }
-input[type="text"], button:hover{
-  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.5);
+input[type="text"],
+button:hover {
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
-button{
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+button {
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
-i{
+i {
   font-size: 0.7rem;
 }
-h1, p {
-  margin:0;
-  padding:0;
+h1,
+p {
+  margin: 0;
+  padding: 0;
 }
 </style>

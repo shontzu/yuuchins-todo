@@ -45,7 +45,8 @@ div{
   box-shadow: 2px 2px 3px rgba(0,0,0,0.7);
   height: 90vh;
   overflow: scroll;
-  background-color: rgb(168, 132, 78);
+  background-color: rgba(255,255,255,0.6);
+  color:black;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
