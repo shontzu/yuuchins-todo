@@ -1,8 +1,7 @@
 <template>
   <div class="container">
-    <!-- <b>~~~Yuuchin's Kanban-style todo~~~</b> -->
     <router-view />
-    <footer>Work in Progress by Yuu Chin</footer>
+    <footer> special shoutout to <a href="https://shorturl.at/ahFX5">Ngeo Jia Jun</a> </footer>
   </div>
 </template>
 
