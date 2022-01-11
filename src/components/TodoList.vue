@@ -1,31 +1,29 @@
-<template>
-  <section
-    v-for="{ id, todo, priority, description, created, done } in Todos"
-    :key="id"
-  >
+  <template v-for="todo in Todos"  :key="todo.id" >
+  <section v-if="todo.done === false">
     <div style="width: 90%">
-      <h1>{{ todo }}</h1>
-      <p>{{ description }}</p>
-      <i>Created on: {{ created }}</i>
+      <h1>{{ todo.todo }}</h1>
+      <p>{{ todo.description }}</p>
+      <i>Created on: {{ new Date(todo.created).toString() }}</i>
       <div>
-        <button @click="toggleTodo(id)">Done ({{ done }})</button>
-        <button @click="deleteTodo(id)">Delete</button>
+        <button @click="toggleTodo(todo)">Mark it as Done</button>
+        <button @click="deleteTodo(todo.id)">Delete</button>
       </div>
     </div>
-    <h1 style="width: 10%">{{ priority }}</h1>
+    <h1 style="width: 10%">{{ todo.priority }}</h1>
   </section>
 </template>
 
 <script>
-import { useLoadTodos, deleteTodo } from "@/firebase";
+import { useLoadTodos, deleteTodo, updateTodo } from "@/firebase";
 export default {
   setup() {
     const Todos = useLoadTodos();
     return { Todos, deleteTodo };
   },
   methods: {
-    toggleTodo() {
-      this.todo.done == !this.todo.done;
+    toggleTodo(todo) {
+      todo.done = !todo.done;
+      updateTodo(todo.id, todo);
     },
   },
 };
@@ -37,8 +35,7 @@ section {
   align-items: center;
   margin: 5px;
   padding: 10px;
-  background-color: rgba(255, 0, 0,0.5);
+  background-color: rgba(255, 0, 0, 0.5);
   border-radius: 10px;
 }
-
 </style>

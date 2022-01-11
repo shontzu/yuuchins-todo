@@ -35,7 +35,7 @@ export default {
       priority: "",
       description: "",
       done: false,
-      created: new Date().toString(),
+      created: new Date().getTime(),
     });
     const onSubmit = async () => {
       await createTodo({ ...form });
