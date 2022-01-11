@@ -14,7 +14,7 @@
     <div>
       <h1>Done</h1>
       <hr>
-      <todo-list />
+      <done-list />
     </div>
   </section>
 </template>
@@ -22,12 +22,14 @@
 <script>
 import TodoCreate from "@/components/TodoCreate.vue";
 import TodoList from "@/components/TodoList.vue";
+import DoneList from "@/components/DoneList.vue";
 
 export default {
   name: "Home",
   components: {
     TodoCreate,
     TodoList,
+    DoneList,
   },
 };
 </script>
