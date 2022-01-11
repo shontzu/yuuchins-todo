@@ -1,29 +1,27 @@
 <template>
-  <div>
-    <form @submit.prevent="onSubmit">
-      <label>Todo</label>
-      <input v-model="form.todo" type="text" required />
+  <form @submit.prevent="onSubmit">
+    <label>Todo</label>
+    <input v-model="form.todo" type="text" required />
 
-      <label>Priority</label>
-      <div>
-        <input v-model="form.priority"  type="radio"  id="1"  name="priority"  value="1"  required/>
-        <label for="1">Primary (1)</label><br />
-      </div>
-      <div>
-        <input  v-model="form.priority"  type="radio"  id="2"  name="priority"  value="2" required/>
-        <label for="2">Secondary (2)</label><br />
-      </div>
-      <div>
-        <input  v-model="form.priority"  type="radio"  id="3"  name="priority"  value="3" required/>
-        <label for="3"></label>Tertiary (3)<br /><br />
-      </div>
+    <label>Priority</label>
+    <div>
+      <input v-model="form.priority" type="radio"  id="1"  name="priority"  value="1"  required  />
+      <label for="1">Primary (1)</label><br />
+    </div>
+    <div>
+      <input  v-model="form.priority"   type="radio"  id="2"  name="priority"  value="2"  required />
+      <label for="2">Secondary (2)</label><br />
+    </div>
+    <div>
+      <input  v-model="form.priority"  type="radio"  id="3"  name="priority"  value="3"  required />
+      <label for="3"></label>Tertiary (3)<br /><br />
+    </div>
 
-      <label>Description</label>
-      <input v-model="form.description"  type="text" />
+    <label>Description</label>
+    <input v-model="form.description" type="text" />
 
-      <button type="submit">Create todo</button>
-    </form>
-  </div>
+    <button type="submit">Create todo</button>
+  </form>
 </template>
 
 <script>
@@ -36,7 +34,7 @@ export default {
       todo: "",
       priority: "",
       description: "",
-      done:false,
+      done: false,
       created: new Date().toString(),
     });
     const onSubmit = async () => {
@@ -54,15 +52,6 @@ export default {
 form {
   display: flex;
   flex-direction: column;
-}
-/* Hide scrollbar for Chrome, Safari and Opera */
-.example::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.example {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  background-color: rgba(255,255,0,0.5);
 }
 </style>

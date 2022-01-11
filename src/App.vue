@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>~~~Yuuchin's Kanban-style todo~~~</h1>
+    <!-- <h1>~~~Yuuchin's Kanban-style todo~~~</h1> -->
     <router-view />
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
 
 <style>
 html{
-  background-color: darkgray;
+  background-color: brown;
 }
 #app {
   font-family: cursive;
@@ -22,9 +22,9 @@ html{
   text-align: center;
 }
 input, button{
-  background-color: pink;
+  background-color: rgba(255, 255, 255,0.5);
   border: none;
-  margin:10px;
+  margin:2px;
   padding:10px;
   border-radius: 10px;
 }

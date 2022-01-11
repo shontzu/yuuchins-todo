@@ -3,7 +3,7 @@
     <div>
       <h1>New Todo</h1>
       <hr>
-      <todo-create />
+      <todo-create/>
     </div>
     <div>
       <h1>Pending Todo's</h1>
@@ -45,6 +45,7 @@ div{
   box-shadow: 2px 2px 3px rgba(0,0,0,0.7);
   height: 90vh;
   overflow: scroll;
+  background-color: rgb(168, 132, 78);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -56,5 +57,16 @@ div::-webkit-scrollbar {
 div {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+@media only screen and (max-width: 700px) {
+  section {
+    display:block;
+  }
+  div{
+    width:100vw;
+    height: 50vh;
+    margin-bottom:50px;
+  }
 }
 </style>
