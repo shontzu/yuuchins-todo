@@ -3,7 +3,7 @@
     <h1>WIP</h1>
     <todo-create />
     <hr />
-    <h1></h1>
+    <h1>Todos</h1>
     <todo-list />
   </div>
 </template>

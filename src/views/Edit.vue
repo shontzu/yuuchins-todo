@@ -5,7 +5,7 @@
       <label>todo</label>
       <input v-model="form.todo" required />
 
-      <label>Email</label>
+      <label>priority</label>
       <input v-model="form.priority" type="text" required />
 
       <button type="submit">Update</button>
@@ -15,16 +15,16 @@
 
 <script>
 import { reactive, computed, onMounted } from "vue";
-import { Todooute, Todoouter } from "vue-router";
+import { TodoRoute, TodoRouter } from "vue-router";
 import { getTodo, updateTodo } from "@/firebase";
 
 export default {
   setup() {
-    const router = Todoouter();
-    const route = Todooute();
+    const router = TodoRouter();
+    const route = TodoRoute();
     const TodoId = computed(() => route.params.id);
 
-    const form = reactive({ name: "", email: "" });
+    const form = reactive({ todo: "", priority: "" });
     onMounted(async () => {
       const todo = await getTodo(TodoId.value);
       form.todo = todo.todo;
