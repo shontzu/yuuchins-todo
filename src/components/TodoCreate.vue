@@ -39,9 +39,10 @@ export default {
     });
     const onSubmit = async () => {
       await createTodo({ ...form });
-      form.todo = "";
-      form.priority = "";
-      form.description = "";
+      // clear form after succesfully submit
+      form.todo = '';
+      form.priority = '';
+      form.description = '';
     };
     return { form, onSubmit };
   },

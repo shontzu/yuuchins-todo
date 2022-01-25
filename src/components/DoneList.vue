@@ -6,7 +6,7 @@
         <p>{{ todo.description }}</p>
         <i>Created on: {{ new Date(todo.created).toString() }}</i>
         <div>
-          <button @click="toggleTodo(todo)">Mark it as Not Done</button>
+          <button @click="toggleTodo(todo)">Mark as Not Done</button>
           <button @click="deleteTodo(todo.id)">Delete</button>
         </div>
       </div>
